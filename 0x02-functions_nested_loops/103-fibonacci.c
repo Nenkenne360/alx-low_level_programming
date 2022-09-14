@@ -23,3 +23,4 @@ int main(void)
 	}
 	printf("%d\n", counter);
 	return (0);
+}

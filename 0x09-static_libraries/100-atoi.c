@@ -1,29 +1,46 @@
 #include "holberton.h"
+#include "2-strlen.c"
+
 /**
- * _atoi - int
- * @s: pointer
- * Return: int.
+ * _atoi - converts string to integer
+ * @s: string to convert
+ *
+ * Return: returns integer value
  */
 int _atoi(char *s)
 {
 	int i;
-	int res = 0;
-	int sig = -1;
-	int brk = 0;
+	int np = 0;
+	int c;
+	int d = 1;
+	int num = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; i < _strlen(s); i++)
 	{
+		if (!(s[i] >= '0' && s[i] <= '9') && c > 0)
+			break;
 		if (s[i] == '-')
-			sig = sig * -1;
+			np--;
+		if (s[i] == '+')
+			np++;
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			res = res * 10;
-			res -= (s[i] - '0');
-			brk = 1;
+			c++;
 		}
-		else if (brk == 1)
-			break;
 	}
-	res = sig * res;
-	return (res);
+	while (c > 0)
+	{
+		num += ((s[i - 1] - '0') * d);
+		i--;
+		c--;
+		d *= 10;
+	}
+	if (np >= 0)
+	{
+		num *= 1;
+	} else
+	{
+		num *= -1;
+	}
+	return (num);
 }

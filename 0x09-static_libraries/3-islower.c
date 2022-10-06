@@ -1,16 +1,16 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * _islower - main function
+ * _islower - check the code for Holberton School students.
  *
- * @c: character to compare
+ * @c:  is a parameter
  *
- * Return: 1 if true, 0 if false
- *
+ * Return: Always 0.
  */
 
 int _islower(int c)
 {
-	if (c >= 'a' && c <= 'z')
+	if (c >= 97 && c <= 122)
 	{
 		return (1);
 	}

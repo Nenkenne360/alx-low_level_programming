@@ -1,24 +1,27 @@
+#include "holberton.h"
+#include <stdio.h>
+
 /**
- * _strpbrk - finds string
- * @s: string to find stuff
- * @accept: accepting arrays
- *
- * Return: returns new value
+ * _strpbrk - bytes
+ * @s: pointer to char
+ * @accept: pointer to char
+ * Return: NULL
  */
+
 char *_strpbrk(char *s, char *accept)
 {
 	int i;
-	int j;
 
-	for (i = 0; s[i] != '\0'; i++)
+	while (*s)
 	{
-		for (j = 0; accept[j] != '\0'; j++)
+		for (i = 0; accept[i]; i++)
 		{
-			if (s[i] == accept[j])
+			if (*s == accept[i])
 			{
-				return (s + i);
+				return (s);
 			}
 		}
+		s++;
 	}
-	return (0);
+	return (NULL);
 }

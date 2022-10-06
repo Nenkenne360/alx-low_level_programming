@@ -1,16 +1,21 @@
-#include "main.h"
+#include "holberton.h"
+
 /**
- * _isalpha - main function
+ * _isalpha - check the code for Holberton School students.
  *
- * @c: character to compare
+ * @c: is c an integer argument
  *
- * Return: 1 if true, 0 if false
- *
+ * Return: Always 0.
  */
 
 int _isalpha(int c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+
+	if (c >= 97 && c <= 122)
+	{
+		return (1);
+	}
+	else if (c >= 65 && c <= 90)
 	{
 		return (1);
 	}

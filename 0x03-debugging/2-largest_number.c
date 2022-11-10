@@ -1,4 +1,6 @@
 #include "main.h"
+/*Function prototype*/
+int largest_number(int, int, int);
 
 /**
  * largest_number - returns the largest of 3 numbers
@@ -7,7 +9,17 @@
  * @c: third integer
  * Return: largest number
  */
-
+ int main(void)
+{
+	int a, b, c, largest = 0;
+	a = 972;
+	b = -98;
+	c = 0;
+	
+	largest = largest_number(a, b, c);
+	printf("%d is the largest nu;mber\n", largest);
+	return(0);
+}
 int largest_number(int a, int b, int c)
 {
 	int largest;
